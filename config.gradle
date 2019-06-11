@@ -32,6 +32,8 @@ ext {
             "design"                            : "com.android.support:design:${version["supportLibraryVersion"]}",
             "constraint-layout"                 : "com.android.support.constraint:constraint-layout:1.1.3",
 
-
+            //di
+            "dagger2"                            : "com.google.dagger:dagger:${version["dagger2Version"]}",
+            "dagger2-compiler"                   : "com.google.dagger:dagger-compiler:${version["dagger2Version"]}",
     ]
 }

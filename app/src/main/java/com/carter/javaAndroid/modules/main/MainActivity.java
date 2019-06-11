@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import com.carter.javaAndroid.R;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
