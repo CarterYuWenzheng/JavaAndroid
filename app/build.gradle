@@ -35,12 +35,19 @@ dependencies {
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["constraint-layout"]
 
+    //ui
+    implementation rootProject.ext.dependencies["statusbar"]//沉浸式状态栏
+    implementation rootProject.ext.dependencies["multipleStatusView"]//多状态的自定义view
+
     //di
     implementation rootProject.ext.dependencies["dagger2"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
     implementation rootProject.ext.dependencies["dagger2-android"]
     implementation rootProject.ext.dependencies["dagger2-android-support"]
     annotationProcessor rootProject.ext.dependencies["dagger2-android-processor"]
+    implementation rootProject.ext.dependencies["javax_annotation"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
 
 
     //leakCanary 性能优化
@@ -67,5 +74,7 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["glide_compiler"]
 
     //other
-    implementation rootProject.ext.dependencies["PersistentCookieJar"]
+    implementation rootProject.ext.dependencies["PersistentCookieJar"]//持久化cookie
+    implementation rootProject.ext.dependencies["fragmentation"]//fragment框架
+    implementation rootProject.ext.dependencies["fragmentation-swipeback"]
 }

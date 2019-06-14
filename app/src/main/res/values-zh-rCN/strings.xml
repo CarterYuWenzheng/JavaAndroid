@@ -13,4 +13,5 @@
 
     <!-- Common -->
     <string name="http_error">网络异常</string>
+    <string name="loading">加载中…</string>
 </resources>

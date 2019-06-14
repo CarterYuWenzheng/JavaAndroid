@@ -72,7 +72,8 @@ public class MyApplication extends Application implements HasActivityInjector {
         return context;
     }
 
-    public boolean isNightMode() {
-        return mDataManager.isNightMode();
+    public static boolean isNightMode() {
+        MyApplication myApplication = (MyApplication)context.getApplicationContext();
+        return myApplication.mDataManager.isNightMode();
     }
 }
