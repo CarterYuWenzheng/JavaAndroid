@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.carter.javaAndroid.R;
+import com.carter.javaAndroid.di.module.GlideApp;
 
 public class GlideImageLoader {
     /**
