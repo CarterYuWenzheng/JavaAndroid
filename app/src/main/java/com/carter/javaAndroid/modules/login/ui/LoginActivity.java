@@ -22,7 +22,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     protected void initView() {
-        loadMultipleRootFragment(R.id.login_frame_layout,0,new LoginFragment(),new RegisterFragment());
+        loadMultipleRootFragment(R.id.login_frame_layout,0,LoginFragment.getInstance(),RegisterFragment.getInstance());
         mTitle.setText("注册");
     }
 

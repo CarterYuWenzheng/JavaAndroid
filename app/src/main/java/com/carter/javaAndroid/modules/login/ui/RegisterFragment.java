@@ -10,11 +10,12 @@ import android.view.ViewGroup;
 import com.carter.javaAndroid.R;
 import com.carter.javaAndroid.base.fragment.BaseFragment;
 import com.carter.javaAndroid.modules.login.contract.RegisterFragmentContract;
+import com.carter.javaAndroid.modules.login.presenter.RegisterFragmentpresenter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RegisterFragment extends BaseFragment<RegisterFragmentContract.Presenter> implements RegisterFragmentContract.View{
+public class RegisterFragment extends BaseFragment<RegisterFragmentpresenter> implements RegisterFragmentContract.View{
 
 
     public static RegisterFragment getInstance() {
