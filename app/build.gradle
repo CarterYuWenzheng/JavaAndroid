@@ -75,4 +75,5 @@ dependencies {
     implementation rootProject.ext.dependencies["PersistentCookieJar"]//持久化cookie
     implementation rootProject.ext.dependencies["fragmentation"]//fragment框架
     implementation rootProject.ext.dependencies["fragmentation-swipeback"]
+    implementation rootProject.ext.dependencies["androideventbus"]
 }

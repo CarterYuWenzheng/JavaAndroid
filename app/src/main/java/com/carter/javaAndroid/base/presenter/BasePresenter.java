@@ -6,6 +6,7 @@ import com.carter.javaAndroid.core.data.DataManager;
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<T extends IView> implements IPresenter<T> {
 
@@ -64,5 +65,12 @@ public class BasePresenter<T extends IView> implements IPresenter<T> {
     @Override
     public void setLoginAccount(String account) {
         mDataManager.setLoginAccount(account);
+    }
+
+    protected void addSubscribe(Disposable disposable){
+        if (compositeDisposable == null){
+            compositeDisposable = new CompositeDisposable();
+        }
+        compositeDisposable.add(disposable);
     }
 }

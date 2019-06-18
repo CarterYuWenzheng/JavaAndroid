@@ -6,11 +6,11 @@ import com.carter.javaAndroid.base.view.IView;
 public interface LoginFragmentContract {
 
     interface View extends IView{
-
+        void loginSuccess();
     }
 
     interface Presenter extends IPresenter<View>{
-
+        void login(String username, String password);
     }
 
 }
