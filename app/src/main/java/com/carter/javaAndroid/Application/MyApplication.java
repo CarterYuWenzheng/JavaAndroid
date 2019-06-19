@@ -6,6 +6,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.v7.app.AppCompatDelegate;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.carter.javaAndroid.BuildConfig;
 import com.carter.javaAndroid.core.data.DataManager;
 import com.carter.javaAndroid.di.component.DaggerAppComponent;
 import com.carter.javaAndroid.di.module.AppModule;
@@ -53,6 +55,12 @@ public class MyApplication extends Application implements HasActivityInjector {
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+
+        if (BuildConfig.DEBUG) {
+            ARouter.openLog();
+            ARouter.openDebug();
+        }
+        ARouter.init(this);
     }
 
     private RefWatcher setupLeakCanary() {

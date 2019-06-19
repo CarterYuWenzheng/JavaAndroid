@@ -5,10 +5,10 @@ import com.carter.javaAndroid.modules.login.contract.RegisterFragmentContract;
 
 import javax.inject.Inject;
 
-public class RegisterFragmentpresenter extends BasePresenter<RegisterFragmentContract.View> implements RegisterFragmentContract.Presenter{
+public class RegisterFragmentPresenter extends BasePresenter<RegisterFragmentContract.View> implements RegisterFragmentContract.Presenter{
 
     @Inject
-    public RegisterFragmentpresenter() {
+    public RegisterFragmentPresenter() {
     }
 
 

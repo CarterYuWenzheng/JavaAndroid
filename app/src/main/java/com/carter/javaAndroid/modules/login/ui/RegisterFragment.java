@@ -1,21 +1,17 @@
 package com.carter.javaAndroid.modules.login.ui;
 
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.carter.javaAndroid.R;
 import com.carter.javaAndroid.base.fragment.BaseFragment;
 import com.carter.javaAndroid.modules.login.contract.RegisterFragmentContract;
-import com.carter.javaAndroid.modules.login.presenter.RegisterFragmentpresenter;
+import com.carter.javaAndroid.modules.login.presenter.RegisterFragmentPresenter;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RegisterFragment extends BaseFragment<RegisterFragmentpresenter> implements RegisterFragmentContract.View{
+public class RegisterFragment extends BaseFragment<RegisterFragmentPresenter> implements RegisterFragmentContract.View{
 
 
     public static RegisterFragment getInstance() {

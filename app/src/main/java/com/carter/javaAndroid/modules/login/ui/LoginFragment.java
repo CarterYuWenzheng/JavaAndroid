@@ -4,8 +4,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.carter.javaAndroid.R;
 import com.carter.javaAndroid.base.fragment.BaseFragment;
+import com.carter.javaAndroid.core.constant.ARouterPath;
 import com.carter.javaAndroid.modules.login.contract.LoginFragmentContract;
 import com.carter.javaAndroid.modules.login.presenter.LoginFragmentPresenter;
 import com.carter.javaAndroid.utils.ToastUtils;
@@ -72,5 +74,6 @@ public class LoginFragment extends BaseFragment<LoginFragmentPresenter> implemen
     @Override
     public void loginSuccess() {
         ToastUtils.showToast(_mActivity,"登录成功");
+        ARouter.getInstance().build(ARouterPath.Main.MAIN_ACTIVITY).navigation();
     }
 }

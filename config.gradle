@@ -20,7 +20,9 @@ ext {
             fragmentationVersion    : "1.3.6",
             leakcanaryVersion       : "1.5.4",
             rxlifecycle2Version     : "2.2.2",
-            espressoVersion         : "3.0.1"
+            espressoVersion         : "3.0.1",
+            aRouterAPIVersion       : "1.5.0",
+            aRouterCompilerVersion  : "1.2.2"
     ]
 
     dependencies = [
@@ -76,5 +78,7 @@ ext {
             "fragmentation"                     : "me.yokeyword:fragmentation:${version["fragmentationVersion"]}",
             "fragmentation-swipeback"           : "me.yokeyword:fragmentation-swipeback:${version["fragmentationVersion"]}",
             "androideventbus"                   : "org.simple:androideventbus:1.0.5.1",
+            "arouter-api"                       : "com.alibaba:arouter-api:${version["aRouterAPIVersion"]}",
+            "arouter-compiler"                  : "com.alibaba:arouter-compiler:${version["aRouterCompilerVersion"]}",
     ]
 }

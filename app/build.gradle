@@ -9,6 +9,13 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //ARouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
     buildTypes {
         release {
@@ -76,4 +83,6 @@ dependencies {
     implementation rootProject.ext.dependencies["fragmentation"]//fragment框架
     implementation rootProject.ext.dependencies["fragmentation-swipeback"]
     implementation rootProject.ext.dependencies["androideventbus"]
+    implementation rootProject.ext.dependencies["arouter-api"]//ARouter
+    annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
 }
