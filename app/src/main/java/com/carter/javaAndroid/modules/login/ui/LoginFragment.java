@@ -12,6 +12,7 @@ import com.carter.javaAndroid.modules.login.contract.LoginFragmentContract;
 import com.carter.javaAndroid.modules.login.presenter.LoginFragmentPresenter;
 import com.carter.javaAndroid.utils.ToastUtils;
 
+
 import butterknife.BindView;
 import butterknife.OnClick;
 
@@ -41,7 +42,7 @@ public class LoginFragment extends BaseFragment<LoginFragmentPresenter> implemen
 
     }
 
-    @OnClick({R.id.btnLogin, R.id.btnRegister})
+    @OnClick({R.id.btnLogin, R.id.btnRegister,R.id.btnMainActivity})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnLogin:
@@ -50,9 +51,16 @@ public class LoginFragment extends BaseFragment<LoginFragmentPresenter> implemen
             case R.id.btnRegister:
                 goToRegister();
                 break;
+            case R.id.btnMainActivity:
+                goToMainActivity();
+                break;
             default:
                 break;
         }
+    }
+
+    private void goToMainActivity() {
+        ARouter.getInstance().build(ARouterPath.Main.MAIN_ACTIVITY).navigation();
     }
 
     private void goToRegister() {
@@ -74,6 +82,6 @@ public class LoginFragment extends BaseFragment<LoginFragmentPresenter> implemen
     @Override
     public void loginSuccess() {
         ToastUtils.showToast(_mActivity,"登录成功");
-        ARouter.getInstance().build(ARouterPath.Main.MAIN_ACTIVITY).navigation();
     }
+
 }

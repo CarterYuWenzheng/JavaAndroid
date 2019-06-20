@@ -4,11 +4,11 @@ import com.carter.javaAndroid.base.presenter.BasePresenter;
 import com.carter.javaAndroid.core.event.LoginEvent;
 import com.carter.javaAndroid.core.rx.BaseObserver;
 import com.carter.javaAndroid.modules.login.bean.LoginData;
-import com.carter.javaAndroid.modules.login.contract.LoginContract;
 import com.carter.javaAndroid.modules.login.contract.LoginFragmentContract;
 import com.carter.javaAndroid.utils.RxUtils;
 
-import org.simple.eventbus.EventBus;
+
+import org.greenrobot.eventbus.EventBus;
 
 import javax.inject.Inject;
 
@@ -28,7 +28,7 @@ public class LoginFragmentPresenter extends BasePresenter<LoginFragmentContract.
                     public void onSuccess(LoginData loginData) {
                         setLoginStatus(true);
                         setLoginAccount(loginData.getUsername());
-                        EventBus.getDefault().register(new LoginEvent());
+                        EventBus.getDefault().postSticky(new LoginEvent("我登录了--"));
                         mView.loginSuccess();
                     }
                 }));
