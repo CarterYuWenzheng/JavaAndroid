@@ -2,11 +2,18 @@ package com.carter.javaAndroid.modules.main;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.carter.javaAndroid.R;
+import com.carter.javaAndroid.base.activity.BaseActivity;
 import com.carter.javaAndroid.core.constant.ARouterPath;
+import com.carter.javaAndroid.core.db.MyDatabase;
+import com.carter.javaAndroid.core.db.bean.User;
 import com.carter.javaAndroid.core.event.LoginEvent;
+import com.carter.javaAndroid.modules.main.contract.MainActivityContract;
+import com.carter.javaAndroid.modules.main.presenter.MainActivityPresenter;
 import com.carter.javaAndroid.utils.ToastUtils;
 
 
@@ -14,16 +21,51 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import butterknife.OnClick;
+
 import static com.carter.javaAndroid.Application.MyApplication.getContext;
 
 @Route(path = ARouterPath.Main.MAIN_ACTIVITY)
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<MainActivityPresenter> implements MainActivityContract.View {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected void initView() {
         EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initToolBar() {
+
+    }
+
+    @Override
+    protected void initEventAndData() {
+
+    }
+
+    @OnClick({R.id.btnTestRoom})
+    void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnTestRoom:
+                testRoom();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void testRoom() {
+        User user = new User();
+        user.setId(10001);
+        user.setName("小明");
+        user.setPassword("111111");
+        MyDatabase.create(this).getUserDao().insert(user);
+        Toast.makeText(this,"测试类数据库",Toast.LENGTH_LONG).show();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)

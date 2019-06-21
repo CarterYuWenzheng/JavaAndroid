@@ -23,7 +23,8 @@ ext {
             espressoVersion         : "3.0.1",
             eventbusVersion         : "3.1.1",
             aRouterAPIVersion       : "1.5.0",
-            aRouterCompilerVersion  : "1.2.2"
+            aRouterCompilerVersion  : "1.2.2",
+            roomVersion             : "1.1.1"
     ]
 
     dependencies = [
@@ -81,5 +82,11 @@ ext {
             "androideventbus"                   : "org.greenrobot:eventbus:${version["eventbusVersion"]}",
             "arouter-api"                       : "com.alibaba:arouter-api:${version["aRouterAPIVersion"]}",
             "arouter-compiler"                  : "com.alibaba:arouter-compiler:${version["aRouterCompilerVersion"]}",
+
+            //room
+            "room-runtime"                      :"android.arch.persistence.room:runtime:${version['roomVersion']}",
+            "room-compiler"                     :"android.arch.persistence.room:compiler:${version['roomVersion']}",
+            "room-rxjava2"                      :"android.arch.persistence.room:rxjava2:${version['roomVersion']}",
+            "room-testing"                      :"androidx.room:room-testing:${version['roomVersion']}",
     ]
 }

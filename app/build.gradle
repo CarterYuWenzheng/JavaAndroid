@@ -28,6 +28,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
     }
+
+    packagingOptions {exclude 'META-INF/rxjava.properties'}
 }
 
 dependencies {
@@ -85,4 +87,13 @@ dependencies {
     implementation rootProject.ext.dependencies["androideventbus"]
     implementation rootProject.ext.dependencies["arouter-api"]//ARouter
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
+    //room数据库
+    implementation rootProject.ext.dependencies["room-runtime"]
+    // For Kotlin use kapt instead of annotationProcessor
+    annotationProcessor rootProject.ext.dependencies["room-compiler"]
+    // optional - RxJava support for Room
+    implementation rootProject.ext.dependencies["room-rxjava2"]
+//     Test helpers
+//    testImplementation rootProject.ext.dependencies["room-testing"]
 }
