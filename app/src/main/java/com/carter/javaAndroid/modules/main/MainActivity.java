@@ -21,6 +21,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.List;
+
 import butterknife.OnClick;
 
 import static com.carter.javaAndroid.Application.MyApplication.getContext;
@@ -48,15 +50,23 @@ public class MainActivity extends BaseActivity<MainActivityPresenter> implements
 
     }
 
-    @OnClick({R.id.btnTestRoom})
+    @OnClick({R.id.btnTestRoom, R.id.btnTestRoom2})
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnTestRoom:
                 testRoom();
                 break;
+            case R.id.btnTestRoom2:
+                testRoom2();
+                break;
             default:
                 break;
         }
+    }
+
+    private void testRoom2() {
+        List<User> users = MyDatabase.create(this).getUserDao().getAllUser();
+
     }
 
     private void testRoom() {
@@ -65,7 +75,7 @@ public class MainActivity extends BaseActivity<MainActivityPresenter> implements
         user.setName("小明");
         user.setPassword("111111");
         MyDatabase.create(this).getUserDao().insert(user);
-        Toast.makeText(this,"测试类数据库",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "测试类数据库", Toast.LENGTH_LONG).show();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
